@@ -18,7 +18,9 @@ body {
 }
 
 /** Form - Log-in Styling */
-.login, .home, .clock {
+.login,
+.home,
+.clock {
     width: 40vw;
     height: auto;
     margin: 25vw auto;
@@ -73,7 +75,8 @@ body {
     h1 {
         font-size: 20vw;
     }
-    #clock-page {
-        font-family: alarm;
-    }
+}
+
+#clock-page span {
+    font-family: alarm;
 }
