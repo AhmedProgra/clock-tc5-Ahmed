@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Consolas;
+}
+@font-face {
+    font-family: alarm;
+    src: url("../fonts/alarm\ clock.ttf");
+}
+body {
+    background-image: url("../asserts/img.png");
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+
+/** Form - Log-in Styling */
+.login, .home, .clock {
+    width: 40vw;
+    height: auto;
+    margin: 25vw auto;
+    background-color: #00000096;
+    border-radius: 20px;
+    border: 2px #eeeeee95 solid;
+    padding: 10px;
+    color: white;
+    label {
+        display: block;
+        margin: 6px;
+        font-weight: bold;
+    }
+    input {
+        width: 80%;
+        height: 35px;
+        margin: 2px auto;
+        display: block;
+        padding: 2px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        &:focus {
+            border: 3px solid #ff914d;
+        }
+    }
+    button {
+        width: 80%;
+        height: 35px;
+        margin: 20px auto;
+        display: block !important;
+        font-size: 18px !important;
+        height: auto;
+        transition: 400ms;
+        &:hover {
+            background-color: transparent !important;
+            border: #ff914d 2px solid;
+            color: white !important;
+        }
+    }
+}
+
+.home .options {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-around;
+}
+
+.clock {
+    width: 90vw !important;
+    margin-top: 25vh;
+    h1 {
+        font-size: 20vw;
+    }
+    #clock-page {
+        font-family: alarm;
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عداد تنازلي</title>
+  <style>
+    @font-face {
+        font-family: a;
+        src: url("fonts/alarm\ clock.ttf");
+    }
+  </style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #countdown {
+      font-size: 2rem;
+      margin-top: 20px;
+      font-family: a;
+    }
+    select {
+      padding: 5px;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>عداد تنازلي</h1>
+  <div>
+    <label for="hours">ساعات:</label>
+    <select id="hours"></select>
+    <label for="minutes">دقائق:</label>
+    <select id="minutes"></select>
+    <label for="seconds">ثوانٍ:</label>
+    <select id="seconds"></select>
+  </div>
+  <button id="startBtn">ابدأ العد التنازلي</button>
+  <div id="countdown">00:00:00</div>
+
+  <script>
+    // تعبئة القوائم المنسدلة
+    function populateSelect(id, max) {
+      const select = document.getElementById(id);
+      for (let i = 0; i <= max; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i.toString().padStart(2, '0');
+        select.appendChild(option);
+      }
+    }
+    populateSelect("hours", 23);   // ساعات (0-23)
+    populateSelect("minutes", 59); // دقائق (0-59)
+    populateSelect("seconds", 59); // ثوانٍ (0-59)
+
+    const startBtn = document.getElementById("startBtn");
+    const countdown = document.getElementById("countdown");
+    let interval;
+
+    // بدء العد التنازلي
+    startBtn.addEventListener("click", () => {
+      // إيقاف أي عد سابق
+      clearInterval(interval);
+
+      // الحصول على القيم
+      const hours = parseInt(document.getElementById("hours").value, 10);
+      const minutes = parseInt(document.getElementById("minutes").value, 10);
+      const seconds = parseInt(document.getElementById("seconds").value, 10);
+
+      // حساب إجمالي الوقت بالثواني
+      let totalSeconds = hours * 3600 + minutes * 60 + seconds;
+
+      // تحديث العد التنازلي كل ثانية
+      interval = setInterval(() => {
+        if (totalSeconds <= 0) {
+          clearInterval(interval);
+          countdown.textContent = "انتهى الوقت!";
+          return;
+        }
+
+        totalSeconds--;
+
+        // حساب الساعات والدقائق والثواني المتبقية
+        const h = Math.floor(totalSeconds / 3600);
+        const m = Math.floor((totalSeconds % 3600) / 60);
+        const s = totalSeconds % 60;
+
+        // تحديث الشاشة
+        countdown.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

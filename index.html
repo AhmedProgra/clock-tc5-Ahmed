@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tronc Commun 5</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/bootstrap-5.3.3.min.css" />
+    </head>
+    <body>
+        <div class="login">
+            <h1 class="text-center">Login Page</h1>
+            <label for="username">Username: </label>
+            <input
+                type="text"
+                placeholder="Enter username/email/phone"
+                id="username"
+                autocomplete="off" />
+            <label for="password" class="mt-3">Password:</label>
+            <input type="password" id="password" placeholder="Password" />
+
+            <button role="alert" class="btn btn-warning">
+                Login to account
+            </button>
+        </div>
+        <div class="home">
+            <h1 class="text-center">Options</h1>
+            <div class="options">
+                <div class="btn btn-warning" id="clock">Clock</div>
+                <div class="btn btn-warning" id="timer">Timer</div>
+            </div>
+        </div>
+        <div class="clock">
+            <h1
+                class="text-center display-1"
+                id="clock-page"
+                style="font-family: alarm"
+                >CL-105</h1
+            >
+            <h2
+                class="text-center"
+                id="clock-page-date"
+                style="font-family: Consolas"></h2>
+        </div>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/popper-1.16.1.min.js"></script>
+        <script src="js/bootstrap-5.3.3.min.js"></script>
+        <script>
+            const date = new Date();
+            const clock = document.getElementById("clock-page");
+            const clockDate = document.getElementById("clock-page-date");
+            clockDate.innerHTML = `<span style='font-family: alarm; font-size: 10vh; color: lime'>CL-105 | </span>${date.toDateString()}<span style='font-family:"alarm"; font-size: 10vh; color: lime'> | TCS-5</span>`;
+            setInterval(function () {
+                const date = new Date();
+                clock.innerHTML = `<span class="text-danger">${date.getHours().toString().padStart(2, '0').trim()}</span>:<span class="text-warning">${date.getMinutes().toString().padStart(2, '0').trim()}</span>:<span class="text-info">${date.getSeconds().toString().padStart(2, "0").trim()}</span>`;
+            }, 1000)
+            const loginPage = $(".login");
+            const homePage = $(".home");
+            loginPage.hide(); //#! <!--! Remove in the last -->
+            homePage.hide();
+            const un = "Ahmed";
+            const pass = "Ahmed";
+            const username = document.getElementById("username");
+            const password = document.getElementById("password");
+            const btn = document.getElementsByTagName("button")[0];
+
+            btn.addEventListener("click", function () {
+                if (username.value == un && password.value == pass) {
+                    loginPage.hide();
+                }
+            });
+
+            $("#clock").click(function () {
+                homePage.hide();
+            })
+        </script>
+    </body>
+</html>
