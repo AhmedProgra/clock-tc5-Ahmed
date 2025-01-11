@@ -55,11 +55,13 @@
                 clock.innerHTML = `<span class="text-danger">${date.getHours().toString().padStart(2, '0').trim()}</span>:<span class="text-warning">${date.getMinutes().toString().padStart(2, '0').trim()}</span>:<span class="text-info">${date.getSeconds().toString().padStart(2, "0").trim()}</span>`;
             }, 1000)
             const loginPage = $(".login");
+            const clockPage = $(".clock");
             const homePage = $(".home");
-            loginPage.hide(); //#! <!--! Remove in the last -->
+            // loginPage.hide(); //#! <!--! Remove in the last -->
             homePage.hide();
-            const un = "Ahmed";
-            const pass = "Ahmed";
+            clockPage.hide();
+            const un = "Tronc Commun 5";
+            const pass = "Ahmed&TCS-5";
             const username = document.getElementById("username");
             const password = document.getElementById("password");
             const btn = document.getElementsByTagName("button")[0];
@@ -67,11 +69,13 @@
             btn.addEventListener("click", function () {
                 if (username.value == un && password.value == pass) {
                     loginPage.hide();
+                    homePage.show();
                 }
             });
 
             $("#clock").click(function () {
                 homePage.hide();
+                clockPage.show();
             })
         </script>
     </body>
