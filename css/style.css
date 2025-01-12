@@ -20,7 +20,8 @@ body {
 /** Form - Log-in Styling */
 .login,
 .home,
-.clock {
+.clock,
+.timer {
     width: 40vw;
     height: auto;
     margin: 15vw auto;
@@ -72,6 +73,8 @@ body {
 .clock {
     width: 90vw !important;
     margin-top: 25vh;
+    position: absolute;
+    left: 5vw;
     h1 {
         font-size: 20vw;
     }
@@ -79,4 +82,62 @@ body {
 
 #clock-page span {
     font-family: alarm;
+}
+
+.timer {
+    margin-top: 24vh;
+    width: 80vw;
+    label,
+    select {
+        display: inline-block;
+
+        &:hover {
+            border: none !important;
+            outline: none !important;
+        }
+    }
+    select {
+        padding: 6px;
+        width: 100px;
+    }
+    & #startBtn.btn, #closeBtn {
+        display: inline-block !important;
+        width: fit-content !important;
+        margin-top: -1px;
+    }
+    .time-control {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: auto;
+    }
+
+}
+#countdown {
+    span {
+        font-family: alarm;
+    }
+}
+
+.my-container  {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.clock #closeBtn {
+    top: -4vw;
+    left: 44vw;
+	position: relative;
+	width: fit-content;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 13px !important;
+	padding: 0;
+	font-weight: bold;
+    &:hover {
+        background-color: var(--bs-danger) !important;
+    }
 }
