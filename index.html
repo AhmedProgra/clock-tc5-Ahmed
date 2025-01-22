@@ -96,7 +96,7 @@
             </div>
 
             <div class="timer">
-                <di class="time-control">
+                <div class="time-control">
                     <div class="hour">
                         <label for="hours">Hours: </label>
                         <select id="hours"></select>
@@ -111,7 +111,8 @@
                     </div>
                     <button id="startBtn" class="btn btn-warning">Start</button>
                     <button id="closeBtn" class="btn btn-danger">Close</button>
-                </di>
+                </div>
+                <hr />
                 <div
                     id="countdown"
                     class="display-1 text-center"
@@ -128,11 +129,12 @@
             </div>
         </div>
         <!--* Container End-->
-
+        <script src="js/main.js" ></script>
         <script src="js/jquery-3.7.1.min.js"></script>
         <script src="js/popper-1.16.1.min.js"></script>
         <script src="js/bootstrap-5.3.3.min.js"></script>
         <script>
+
             const date = new Date();
             const clock = document.getElementById("clock-page");
             const clockDate = document.getElementById("clock-page-date");
@@ -161,8 +163,8 @@
             homePage.hide();
             clockPage.hide();
             timerPage.hide();
-            const un = "Tronc Commun 5";
-            const pass = "Ahmed&TCS-5";
+            const un = "Ahmed Bouramdane";
+            const pass = "Ahmed 1234";
             const username = document.getElementById("username");
             const password = document.getElementById("password");
             const btn = document.getElementsByTagName("button")[0];

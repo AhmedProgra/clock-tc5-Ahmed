@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Transparent Raindrops</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background: linear-gradient(to bottom, #000d1a, #002e5c);
-                height: 100vh;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Mode</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #fullscreenButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #fullscreenButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <button id="fullscreenButton">Activate Fullscreen Mode</button>
 
-            #rain-container {
-                position: relative;
-                width: 100%;
-                height: 100%;
-            }
+    <script>
+        const button = document.getElementById('fullscreenButton');
 
-            .raindrop {
-                position: absolute;
-                width: 10px;
-                height: 10px;
-                background-color: rgba(255, 255, 255, 0.3); /* دائرة شفافة */
-                border-radius: 50%;
-                animation: fall linear infinite;
+        button.addEventListener('click', () => {
+            // Check if Fullscreen API is supported
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // For Safari
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // For IE/Edge
+                document.documentElement.msRequestFullscreen();
+            } else {
+                alert("Fullscreen mode is not supported in your browser.");
             }
-
-            @keyframes fall {
-                0% {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 0.8;
-                }
-                100% {
-                    transform: translateY(100vh);
-                    opacity: 0;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <div id="rain-container"></div>
-
-    </body>
+        });
+    </script>
+</body>
 </html>
