@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Consolas;
+}
+
+@font-face {
+  font-family: alarm;
+  src: url("../fonts/alarm clock.ttf");
+}
+body {
+  background-image: url("../asserts/img.png");
+  min-height: 100vh;
+  width: 100vw;
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+}
+
+/** Form - Log-in Styling */
+.login,
+.home,
+.clock,
+.timer {
+  width: 40vw;
+  height: auto;
+  margin: 15vw auto;
+  background-color: rgba(0, 0, 0, 0.5882352941);
+  border-radius: 20px;
+  border: 2px rgba(238, 238, 238, 0.5843137255) solid;
+  padding: 10px;
+  color: white;
+}
+.login label,
+.home label,
+.clock label,
+.timer label {
+  display: block;
+  margin: 6px;
+  font-weight: bold;
+}
+.login input,
+.home input,
+.clock input,
+.timer input {
+  width: 80%;
+  height: 35px;
+  margin: 2px auto;
+  display: block;
+  padding: 2px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.login input:focus,
+.home input:focus,
+.clock input:focus,
+.timer input:focus {
+  border: 3px solid #ff914d;
+}
+.login button,
+.home button,
+.clock button,
+.timer button {
+  width: 80%;
+  height: 35px;
+  margin: 20px auto;
+  display: block !important;
+  font-size: 18px !important;
+  height: auto;
+  transition: 400ms;
+}
+.login button:hover,
+.home button:hover,
+.clock button:hover,
+.timer button:hover {
+  background-color: transparent !important;
+  border: #ff914d 2px solid;
+  color: white !important;
+}
+
+.home .options {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
+}
+
+.clock {
+  width: 80vw !important;
+  margin-top: 25vh;
+}
+.clock h1 {
+  font-size: 120px;
+  margin-top: 60px;
+}
+.clock h1 * {
+  font-family: alarm;
+}
+.clock .clock-page-data {
+  font-size: 26px !important;
+}
+
+#clock-page span {
+  font-family: alarm;
+}
+
+.timer {
+  margin-top: 24vh;
+  width: 80vw;
+}
+.timer label,
+.timer select {
+  display: inline-block;
+}
+.timer label:hover,
+.timer select:hover {
+  border: none !important;
+  outline: none !important;
+}
+.timer select {
+  padding: 6px;
+  width: 100px;
+}
+.timer #startBtn.btn, .timer #closeBtn {
+  display: inline-block !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  margin-top: -1px;
+}
+.timer .time-control {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: auto;
+}
+
+#countdown * {
+  font-family: alarm;
+}
+
+.my-container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.clock {
+  position: relative;
+}
+.clock .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 6px;
+  position: absolute;
+  right: 10px;
+  top: -10px;
+}
+
+.login * {
+  display: block;
+}
+
+.timer .time-control {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  justify-items: center;
+}/*# sourceMappingURL=main.css.map */

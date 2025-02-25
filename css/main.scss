@@ -70,12 +70,17 @@ body {
 }
 
 .clock {
-    width: 90vw !important;
+    width: 80vw !important;
     margin-top: 25vh;
-    position: absolute;
-    left: 5vw;
     h1 {
-        font-size: 20vw;
+        font-size: 120px;
+         margin-top: 60px;
+    }
+    h1 * {
+        font-family: alarm;
+    }
+    .clock-page-data {
+        font-size: 26px !important;
     }
 }
 
@@ -111,10 +116,8 @@ body {
     }
 
 }
-#countdown {
-    span {
-        font-family: alarm;
-    }
+#countdown * {
+    font-family: alarm;
 }
 
 .my-container  {
@@ -125,18 +128,24 @@ body {
     z-index: 100;
 }
 
-.clock #closeBtn {
-    top: -4vw;
-    left: 44vw;
-	position: relative;
-	width: fit-content;
-	border-radius: 50%;
-	width: 40px;
-	height: 40px;
-	font-size: 13px !important;
-	padding: 0;
-	font-weight: bold;
-    &:hover {
-        background-color: var(--bs-danger) !important;
-    }
+.clock{
+    position: relative;
+    
+    .btn {
+    width: fit-content;
+    padding: 6px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+}}
+
+.login * {
+    display: block;
+}
+
+.timer .time-control {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    justify-items: center;
 }

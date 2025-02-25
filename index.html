@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tronc Commun 5</title>
-        <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/bootstrap-5.3.3.min.css" />
+        <link rel="stylesheet" href="css/main.css" />
         <style>
             /* إعدادات الصفحة الأساسية */
             body,
@@ -64,33 +64,36 @@
                 <label for="username">Username: </label>
                 <input
                     type="text"
-                    placeholder="Enter username/email/phone"
+                    placeholder="Enter the username/email/phone"
                     id="username"
                     autocomplete="off" />
                 <label for="password" class="mt-3">Password:</label>
-                <input type="password" id="password" placeholder="Password" />
+                <input type="password" id="password" placeholder="Enter the password" />
 
                 <button role="alert" class="btn btn-warning">
                     Login to account
                 </button>
             </div>
+
             <div class="home">
                 <h1 class="text-center">Options</h1>
+                <hr>
                 <div class="options pt-2">
                     <div class="btn btn-warning" id="clock">Clock</div>
-                    <div class="btn btn-warning" id="timer">Timer</div>
+                    <div class="btn btn-info" id="timer">Timer</div>
                 </div>
             </div>
+
             <div class="clock">
                 <button id="closeBtn" class="btn btn-danger">Close</button>
                 <h1
-                    class="text-center display-1"
+                    class="text-center"
                     id="clock-page"
                     style="font-family: alarm">
                     CL-105
                 </h1>
                 <h2
-                    class="text-center"
+                    class="clock-page-data text-center"
                     id="clock-page-date"
                     style="font-family: Consolas"></h2>
             </div>
@@ -115,7 +118,7 @@
                 <hr />
                 <div
                     id="countdown"
-                    class="display-1 text-center"
+                    class="text-center"
                     style="font-family: alarm; font-size: 1400%">
                     <span class="text-danger">00</span>:<span
                         class="text-warning"
@@ -138,7 +141,7 @@
             const date = new Date();
             const clock = document.getElementById("clock-page");
             const clockDate = document.getElementById("clock-page-date");
-            clockDate.innerHTML = `<span style='font-family: alarm; font-size: 10vh; color: lime'>CL-105 | </span>${date.toDateString()}<span style='font-family:"alarm"; font-size: 10vh; color: lime'> | TC-5</span>`;
+            clockDate.innerHTML = `<span style='font-family: alarm; color: lime'>CL-105 | </span>${date.toDateString()}<span style='font-family:"alarm"; color: lime'> | TC-5</span>`;
             setInterval(function () {
                 const date = new Date();
                 clock.innerHTML = `<span class="text-danger">${date
